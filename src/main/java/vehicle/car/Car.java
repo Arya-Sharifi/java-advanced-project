@@ -6,28 +6,22 @@ package vehicle;
 public class Car extends Vehicle implements TrunkCapacity,Gearbox {
 
     //Atributes or Dade
+    public int doorsnumbers = 4;
     private boolean doors;   //false
-    private String mark;
-    private String model;
-    private String made;
-    private String colour;
+    private  String mark;
+    private  String model;
     private int capacityoftrunk;
-    private String gearbox;
-    private Driver driver;
+    private GearboxEnum noeDande;
+    public static int thenumbersofsellingcars;
 
     //constructor
-     public Car (String mark,String model, String made,String colour){
+     public Car (String mark,String model, int capacityoftrunk,GearboxEnum noeDande){
         this.mark = mark;
         this.model = model;
-        this.made = made;
-        this.colour = colour;
-     }
-
-    public Car(String mark, int capacityoftrunk, String gearbox) {
-        this.mark = mark;
         this.capacityoftrunk = capacityoftrunk;
-        this.gearbox = gearbox;
-    }
+        this.noeDande = noeDande;
+
+     }
 
 
     void openedDoors() {
@@ -53,14 +47,23 @@ public class Car extends Vehicle implements TrunkCapacity,Gearbox {
     public String getMark() {
         return mark;
     }
-
     @Override
-    public String typeGearBox() {
-        return "automatic";
+    public String getModel(){
+        return model;
     }
+
 
     @Override
     public int capacityOfTrunk() {
-        return 100;
+        return capacityoftrunk;
+    }
+
+    @Override
+    public GearboxEnum typeGearBox() {
+        return noeDande();
+    }
+
+    private GearboxEnum noeDande() {
+         return noeDande();
     }
 }
